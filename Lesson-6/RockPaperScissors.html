@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Boolean</title>
+        <style>
+            .choice-button
+            {
+                display: flex;
+                margin-top: 10px;
+                margin-bottom: 50px;
+                gap: 5px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div>Rock Paper Scissors</div>
+        <div id="button-container" class="choice-button">
+            <div><button onclick="choice = 'rock';
+                if (choice == bot_choice)
+                {
+                    alert(`Draw! Your choice: ${choice}, Computer choice: ${bot_choice}`);
+                }
+
+                else if((choice == 'rock' && bot_choice == 'paper') || (choice == 'scissors' && bot_choice == 'rock') || (choice == 'paper' && bot_choice == 'scissors'))
+                {
+                    alert(`You Lose! Your choice: ${choice}, Computer choice: ${bot_choice}`);
+                }
+
+                else
+                {
+                    alert(`You Win! Your choice: ${choice}, Computer choice: ${bot_choice}`);
+                }  
+                ;">Rock</button></div>
+            <div><button onclick="choice = 'paper';
+                if (choice == bot_choice)
+                {
+                    alert(`Draw! Your choice: ${choice}, Computer choice: ${bot_choice}`);
+                }
+
+                else if((choice == 'rock' && bot_choice == 'paper') || (choice == 'scissors' && bot_choice == 'rock') || (choice == 'paper' && bot_choice == 'scissors'))
+                {
+                    alert(`You Lose! Your choice: ${choice}, Computer choice: ${bot_choice}`);
+                }
+
+                else
+                {
+                    alert(`You Win! Your choice: ${choice}, Computer choice: ${bot_choice}`);
+                }
+                ">Paper</button></div>
+
+            <div><button onclick="choice = 'scissors';
+                if (choice == bot_choice)
+                {
+                    alert(`Draw! Your choice: ${choice}, Computer choice: ${bot_choice}`);
+                }
+
+                else if((choice == 'rock' && bot_choice == 'paper') || (choice == 'scissors' && bot_choice == 'rock') || (choice == 'paper' && bot_choice == 'scissors'))
+                {
+                    alert(`You Lose! Your choice: ${choice}, Computer choice: ${bot_choice}`);
+                }
+
+                else
+                {
+                    alert(`You Win! Your choice: ${choice}, Computer choice: ${bot_choice}`);
+                }
+                ">Scissors</button></div>
+        </div>
+
+        <div><a href="forward">Click here</a> to see the final version of the project.</div>
+
+    </body>
+
+    <script>
+        let choice = "";
+        let choices = ['rock','paper','scissors'];
+        let bot_choice = choices[Math.floor(Math.random() * choices.length)];
+
+
+    </script>
+</html>

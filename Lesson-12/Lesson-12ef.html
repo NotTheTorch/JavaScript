@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Advanced Functions</title>
+    </head>
+    <body>
+        <div>
+            <div style="margin-bottom: 5px;"><button class="add-to-cart" onclick="addToCart();" style="cursor: pointer;">Add to Cart</button></div>
+            <div class="empty-container"></div>
+        </div>
+    </body>
+
+    <script>
+        let timeoutID;
+        
+        function addToCart()
+        {
+            const message = document.querySelector('.empty-container');
+            message.innerHTML = `Added`;
+
+            clearTimeout(timeoutID);
+
+
+            timeoutID = setTimeout(function(){
+                message.innerHTML = '';
+            },2000)
+        };
+
+
+
+    </script>
+</html>

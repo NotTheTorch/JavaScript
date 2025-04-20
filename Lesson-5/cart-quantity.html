@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Variables Project</title>
+    </head>
+
+    <body>
+        <p>Cart Quantity</p>
+        <button onclick="console.log('Cart quantity:' + Quantity);">Show Quantity</button>
+        <button onclick="Quantity += 1; console.log(`Cart quantity: ${Quantity}`);">Add to Cart</button>
+        <button onclick="Quantity += 2; console.log(`Cart quantity: ${Quantity}`);">+2</button>
+        <button onclick="Quantity += 3; console.log(`Cart quantity: ${Quantity}`);">+3</button>
+        <button onclick="Quantity += 4; console.log(`Cart quantity: ${Quantity}`);">+4</button>
+        <button onclick="Quantity += 5; console.log(`Cart quantity: ${Quantity}`);">+5</button>
+        <button onclick="Quantity = 0; console.log('Cart was reset.'); console.log(`Cart quantity: ${Quantity}`);">Reset Cart</button>
+        <button onclick="Quantity--; console.log(`Cart quantity: ${Quantity}`)">-1</button>
+        <button onclick="Quantity -= 2; console.log(`Cart quantity: ${Quantity}`)">-2</button>
+        <button onclick="Quantity -=3; console.log(`Cart quantity: ${Quantity}`)">-3</button>
+    </body>
+
+    <script>
+        let Quantity = 0;
+    </script>
+
+</html>
+

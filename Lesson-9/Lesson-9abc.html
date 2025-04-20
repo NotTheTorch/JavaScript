@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Heads or Tails</title>
+    </head>
+
+    <style>
+
+        .button-container
+        {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+
+
+
+    </style>
+
+    <body>
+        <div class="button-container">
+            <div><button class="heads-button" onclick="game('heads');">9a</button></div>
+            <div><button class="tails-button" onclick="game('tails');">9b</button></div>
+        </div>
+        <div class="empty-container"></div>
+    </body>
+
+    <script>
+
+        const heads_button = document.querySelector('.heads-button');
+        const tails_button = document.querySelector('.tails-button');
+
+        heads_button.innerHTML = 'heads';
+        tails_button.innerHTML = 'tails';
+
+        function game(choice)
+        {
+            const bot_choice = Math.floor(Math.random)? 'heads':'tails';
+            document.querySelector('.empty-container').innerHTML = `You chose: ${choice}`;
+        }
+
+        console.log(heads_button);
+
+
+    </script>
+
+</html>

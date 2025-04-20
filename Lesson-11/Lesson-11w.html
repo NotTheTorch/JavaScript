@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arrays and Loops</title>
+    </head>
+    <body>
+        
+    </body>
+
+    <script>
+
+        function findIndex(array)
+        {
+            const colors = {};
+            for(let i = 0; i < array.length; i++)
+            {
+                if(!(colors.hasOwnProperty(array[i])))
+                    colors[array[i]] = 1;
+                else
+                    colors[array[i]] += 1;
+            }
+            return [Object.keys(colors)];
+        }
+
+        console.log(findIndex(['green','red','blue','red']));
+
+
+    </script>
+</html>

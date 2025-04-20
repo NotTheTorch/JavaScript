@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <style>
+
+            .content-container
+            {
+                display: flex;
+                gap: 5px;
+                height: 35px;
+                margin: 10px;
+                margin-left: 0;
+            }
+
+            .calculate-button
+            {
+                background-color: rgb(42, 139, 42);
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+
+            .highlight
+            {
+                color: red;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div>
+            <div class="content-container">
+                <input class="cost" type="text">
+                <button class="calculate-button" onclick="cart_calculator()">Calculate</button>
+            </div>
+            <div class="empty-container"></div>
+        </div>
+    </body>
+
+
+    <script>
+
+        function cart_calculator()
+        {
+            const value = parseFloat(document.querySelector('.cost').value);
+            const desc = document.querySelector('.empty-container');
+            
+            removeHighlight();
+
+
+            if(value >= 40)
+            {
+                desc.innerHTML = `$${value}`;
+            }
+            else if(value > 0)
+            {   
+                const updatedValue = value + 10;
+                desc.innerHTML = `$${updatedValue}`;
+            }
+            else
+            {
+                desc.classList.add('highlight');
+                desc.innerHTML = `Error: cost cannot be less than $0`;
+            }
+        }
+
+        function removeHighlight()
+        {
+            const desc = document.querySelector('.empty-container');
+            if(desc.classList.contains('highlight'))
+                desc.classList.remove('highlight');
+        }
+
+    </script>
+</html>

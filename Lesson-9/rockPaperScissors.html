@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>
+        <style>
+            body
+            {
+                margin-top: 15px;
+            }
+
+            .buttons 
+            {
+                margin-top: 15px;
+                margin-bottom: 50px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div>Rock Paper Scissors</div>
+        <div class="buttons">
+            <button onclick="game('Rock');">Rock</button>
+            <button onclick="game('Paper')">Paper</button>
+            <button onclick="game('Scissors')">Scissors</button>
+            <button onclick="resetScore();">Reset Score</button>
+        </div>
+        <div><a href="Forward">Click here </a>to see the final version of the project.</div>
+    </body>
+    
+    <script>
+        let choices = ['Rock','Paper','Scissors'];
+        let bot_choice = choices[Math.floor(Math.random()*(choices.length))];
+        let result = JSON.parse(localStorage.getItem('result'));
+
+        if(!result)
+        {
+            result = {
+                Win: 0,
+                Losses: 0,
+                Tie: 0
+            };
+        }
+
+        function game(user_choice)
+        {
+            let bot_choice = choices[Math.floor(Math.random()*(choices.length))];
+            if(user_choice == bot_choice)
+            {
+                result.Tie += 1;
+                alert(`It's a Draw! Your choice: ${user_choice}, Computer choice: ${bot_choice} \nWins: ${result.Win}, Losses: ${result.Losses}, Tie: ${result.Tie}`);
+            }
+            else if((user_choice == 'Rock' && bot_choice == 'Paper') || (user_choice == 'Paper' && bot_choice == 'Scissors') || (user_choice == 'Scissors' && bot_choice == 'Rock'))
+            {
+                result.Losses += 1;
+                alert(`You Lose! Your choice: ${user_choice}, Computer choice: ${bot_choice} \nWins: ${result.Win}, Losses: ${result.Losses}, Tie:${result.Tie}`);
+            }
+            else
+            {
+                result.Win += 1;
+                alert(`You Win! Your choice: ${user_choice}, Computer choice: ${bot_choice} \nWins: ${result.Win}, Losses:${result.Losses}, Tie: ${result.Tie}`);
+            }
+            
+            localStorage.setItem('result',JSON.stringify(result));
+
+        }
+        
+        function resetScore()
+            {
+                result = {
+                    Win : 0,
+                    Losses: 0,
+                    Tie: 0
+                };
+                localStorage.removeItem('result');
+            }
+        
+
+    </script>
+
+</html>

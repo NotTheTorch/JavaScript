@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM Project</title>
+        <style>
+
+            .container
+            {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                margin-bottom: 40px;
+            }
+
+            .calculator-container
+            {
+                display: flex;
+                gap: 3px;
+            }
+
+            a:link
+            {
+                color: blue;
+            }
+
+            a:visited
+            {
+                color: purple;
+            }
+        </style>
+
+
+    </head>
+    
+    <body>
+        <div class="container">
+            <div>YouTube Subscibe Button</div>
+            <div><button class="js-subscribe-botton">Subscribe</button></div>
+        </div>
+
+        <div class="container">
+            <div>Rock Paper Scissors</div>
+            <div><a href="/Lesson-9/game.html">Click here</a></div>
+        </div>
+
+        <div class="container">
+            <div>Amazon Shipping Calculator</div>
+            <div>Order under $40 = +$10 shipping.</div>
+            <div>Order over $40 = FREE shipping.</div>
+            <div class="calculator-container">
+                <div><input class="item-cost" type="text" placeholder="Cost of order"></div>
+                <div><button class="calculate-button">Calculate</button></div>
+            </div>
+            <div class="extra-content"></div>
+        </div>
+        
+        <div><a href="">CSS version of these projects</a></div>
+
+
+    </body>
+
+    <script>
+
+        const buttonElement =document.querySelector('.js-subscribe-botton');
+        
+        buttonElement.addEventListener('click',() =>{
+            
+            if(buttonElement.innerHTML === 'Subscribe')
+            {
+                buttonElement.innerHTML = 'Subscribed';
+            }
+            else
+            {
+                buttonElement.innerHTML = 'Subscribe';
+            }
+
+        });
+
+        const calculate = document.querySelector('.calculate-button');
+
+        calculate.addEventListener('click',() =>{
+            
+            const item_cost = parseInt(document.querySelector('.item-cost').value);
+            let total_cost = 0;
+
+            if(item_cost < 40)
+                total_cost = item_cost + 10;
+            
+            else
+                total_cost = item_cost;
+            
+            
+            document.querySelector('.extra-content').innerHTML = `$${total_cost}`;
+
+        })
+        
+
+
+
+    </script>
+</html>

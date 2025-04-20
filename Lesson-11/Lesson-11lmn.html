@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document</title>
+    </head>
+
+    <body>
+        
+    </body>
+
+    <script>
+
+        function minMax(nums)
+        {
+            return [Math.min(...nums),Math.max(...nums)];
+        }
+
+        console.log(`min:${minMax([-2,3,-5,7,10])[0]}, max:${minMax([-2,3,-5,7,10])[1]}`);
+        
+
+        const fruits = {
+            'apple' : 0,
+            'grapes': 0
+         };
+
+
+        function countWords(words)
+        {
+            for(let i = 0; i < words.length; i++)
+            {
+                if(!(fruits.hasOwnProperty(words[i])))
+                    fruits[words[i]] = 1;
+                else
+                    fruits[words[i]] += 1;
+            }
+        }
+        countWords(['apple','grapes','grapes','grapes','apple','oranges'])
+        console.log(fruits);
+
+
+    </script>
+
+
+</html>

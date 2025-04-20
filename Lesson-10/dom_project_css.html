@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM Project</title>
+        <style>
+
+            *
+            {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            body
+            {
+                margin-top: 15px;
+            }
+
+            .subscribe-button
+            {
+                font-weight: bold;
+                color: white;
+                background-color: black;
+                border: none;
+                padding: 10px 15px;
+                border-radius: 20px;
+
+            }
+
+            .is-subscribed
+            {
+                color: black;
+                background-color: rgb(240, 240, 240);
+            }
+
+            .item-cost
+            {
+                padding: 10px;
+                font-size: 15px;
+            }
+
+            .calculate-button
+            {
+                background-color: rgb(25, 121, 35);
+                color: white;
+                padding: 12px 15px;
+                font-size: 15px;
+                border: none;
+
+            }
+
+            .container
+            {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                margin-bottom: 40px;
+            }
+
+            .calculator-container
+            {
+                display: flex;
+                gap: 3px;
+            }
+
+            a:link
+            {
+                color: blue;
+            }
+
+            a:visited
+            {
+                color: purple;
+            }
+        </style>
+
+
+    </head>
+    
+    <body>
+        <div class="container">
+            <div>YouTube Subscribe Button</div>
+            <div><button class="subscribe-button">Subscribe</button></div>
+        </div>
+
+
+        <div class="container">
+            <div>Amazon Shipping Calculator</div>
+            <div>Order under $40 = +$10 shipping.</div>
+            <div>Order over $40 = FREE shipping.</div>
+            <div class="calculator-container">
+                <div><input class="item-cost" type="text" placeholder="Cost of order"></div>
+                <div><button class="calculate-button">Calculate</button></div>
+            </div>
+            <div class="extra-content"></div>
+        </div>
+
+        <div class="container">
+            <div>Rock Paper Scissors</div>
+            <div><a href="/Lesson-10/game-css.html">Click here</a></div>
+        </div>
+        
+    </body>
+
+    <script>
+
+        const buttonElement =document.querySelector('.subscribe-button');
+        
+        buttonElement.addEventListener('click',() =>{
+            
+            if(buttonElement.innerHTML === 'Subscribe')
+            {
+                buttonElement.innerHTML = 'Subscribed';
+                buttonElement.classList.add('is-subscribed');
+            }
+            else
+            {
+                buttonElement.innerHTML = 'Subscribe';
+                buttonElement.classList.remove('is-subscribed');
+            }
+
+        });
+
+        const calculate = document.querySelector('.calculate-button');
+
+        calculate.addEventListener('click',() =>{
+            
+            const item_cost = parseInt(document.querySelector('.item-cost').value);
+            let total_cost = item_cost;
+
+            if(item_cost < 40)
+                total_cost = item_cost + 10;
+            
+            document.querySelector('.extra-content').innerHTML = `$${total_cost}`;
+
+        })
+        
+
+
+
+    </script>
+</html>

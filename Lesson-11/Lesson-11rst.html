@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arrays and Loops</title>
+    </head>
+
+    <body>
+    </body>
+
+    <script>
+
+        function removeEggs(foods)
+        {
+            const result = []
+            let i = 0;
+            while(i < foods.length)
+            {
+                if(foods[i] == 'egg')
+                {
+                    i++;
+                    continue;
+                }
+                result.push(foods[i]);
+                i++;
+            }
+            return result
+        }
+        
+        console.log(removeEggs(['egg','apple','egg','egg','ham']));
+
+
+        function removeEggsLimit(foods,times)
+        {
+            let i = 0;
+            while(i < foods.length)
+            {
+                if(foods[i] == 'egg' && times > 0)
+                {
+                    foods.splice(i,1);
+                    i++;
+                    times --;
+                }
+                else
+                    i++;
+            }
+            return foods;
+        }
+
+        console.log(removeEggsLimit(['egg','apple','egg','egg','ham'],2));
+
+        function removeEggsBackward(foods,times)
+        {
+            let i = foods.length-1;
+
+            while(i >= 0)
+            {
+                if(foods[i] == 'egg' && times > 0)
+                {
+                    foods.splice(i,1);
+                    i--;
+                    times--;
+                }
+                else
+                    i--;
+            }
+            return foods
+        }
+
+        console.log(removeEggsBackward(['egg','apple','egg','egg','ham'],2));
+
+
+
+    </script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Loops</title>
+    </head>
+    <body>
+        
+    </body>
+
+    <script>
+
+        function addNum(array,num)
+        {
+            for(let i=0; i< array.length; i++)
+            {
+                array[i] += num;
+            }
+            console.log(array);
+        }
+
+        addNum([1,2,3],2);
+
+
+        function addArrays(array1,array2)
+        {
+            let sumArr = [];
+            for(let i = 0; i < array1.length; i++)
+            {
+                sumArr[i] = array1[i] + array2[i];
+            }
+            console.log(sumArr);
+        }
+
+        addArrays([1,1,2],[1,1,3]);
+
+
+        function countPositive(array)
+        {
+            let count = 0;
+            for(let i = 0; i < array.length; i++)
+            {
+                if (array[i] > 0)
+                    count += 1
+            }
+            return count;
+        }
+
+        console.log(countPositive([-2,3,-5,7,10]))
+
+
+    </script>
+</html>

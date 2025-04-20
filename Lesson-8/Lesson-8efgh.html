@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Product Page</title>
+    </head>
+    <body>
+        
+    </body>
+    
+    <script>
+
+        let greeting = 'Good Morining';
+
+        const product1 = {
+            name: 'U.S.Polo_T-Shirt',
+            price: 30
+        };
+
+        const product2 = {
+            name: 'U.S.Polo_T-Shirt',
+            price: 30
+        };
+
+        function isSameProduct(object1,object2)
+        {
+            if((object1.price == object2.price) && (object1.name == object2.name))
+                return true;
+            else
+                return false;
+        }
+
+        console.log(isSameProduct(product1,product2))
+        console.log(greeting.toLowerCase());
+
+    </script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Advanced Functions</title>
+    </head>
+
+    <body>
+        
+    </body>
+
+    <script>
+
+        const removeEggs = (array)=>{
+           return array.filter(value => (!(value == 'eggs')))
+        }
+
+        console.log(removeEggs(['eggs','apple','eggs','eggs','ham']));
+
+        
+        const removeEgg = (foods)=>{
+            let count = 0;
+            return foods.filter(value =>{
+                if(count < 2 && value == 'eggs')
+                {
+                    count += 1;
+                    return false;
+                }
+                return true;
+
+            });
+        };
+
+        console.log(removeEgg(['eggs','apple','eggs','eggs','ham']));
+        
+
+
+    </script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <link rel="stylesheet" href="styles/Lesson-10i.css">
+        <script src="scripts/Lesson-10i.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="input-container"><input class="input-taker" type="tel" placeholder="0"></div>
+            <div class="grid-content">
+                
+                <div class="button-container"><button class="calc-button" onclick="extend('1')">1</button></div>
+                <div class="button-container"><button class="calc-button" onclick="extend('2')">2</button></div>
+                <div class="button-container"><button class="calc-button" onclick="extend('3')">3</button></div>
+                <div class="button-container"><button class="calc-button symbol" onclick="extend('+')">+</button></div>
+        
+                <div class="button-container"><button class="calc-button" onclick="extend('4')">4</button></div>
+                <div class="button-container"><button class="calc-button" onclick="extend('5')">5</button></div>
+                <div class="button-container"><button class="calc-button" onclick="extend('6')">6</button></div>
+                <div class="button-container"><button class="calc-button symbol" onclick="extend('-')">-</button></div>
+        
+                <div class="button-container"><button class="calc-button" onclick="extend('7')">7</button></div>
+                <div class="button-container"><button class="calc-button" onclick="extend('8')">8</button></div>
+                <div class="button-container"><button class="calc-button" onclick="extend('9')">9</button></div>
+                <div class="button-container"><button class="calc-button symbol" onclick="extend('*')">*</button></div>
+        
+                <div class="button-container"><button class="calc-button" onclick="extend('0')">0</button></div>
+                <div class="button-container"><button class="calc-button" onclick="extend('.')">.</button></div>
+                <div class="button-container"><button class="calc-button" onclick="calculate()">=</button></div>
+                <div class="button-container"><button class="calc-button symbol" onclick="extend('/')">/</button></div>
+            
+                <div><button class="calc-button special" onclick="reset()">Clear</button></div>
+                
+            </div>
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title class="title-class">New messages</title>
+    </head>
+
+    <body>
+        <div>
+            <button class="add-button" onclick="add()">Add</button>
+            <button class="remove-button" onclick="remove()">Remove</button>
+        </div>
+    </body>
+    
+    <script>
+
+        const add_button = document.querySelector('.add-button');
+        const remove_button = document.querySelector('.remove-button');
+
+        let message = 2;
+
+        function add()
+        {
+            message += 1;
+            document.title = `(${message}) New messages`;
+        }
+
+        function remove()
+        {
+            if(message === 0)
+            {
+                document.title = `App`;
+            }
+            
+            else
+            {
+                message -= 1;
+                document.title = `(${message}) New messages`;
+            }
+        }
+
+    </script>
+</html>

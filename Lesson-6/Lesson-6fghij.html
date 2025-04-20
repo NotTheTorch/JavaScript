@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Heads or Tails</title>
+        <style>
+            div
+            {
+                display: inline;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div><button onclick="guessFunc('Heads');">Heads</button></div>
+        <div><button onclick="guessFunc('Tails');">Tails</button></div>
+    </body>
+
+    <script>
+        function guessFunc(guess)
+        {
+            let number = Math.round(Math.random());
+            let result = (number == 0)? 'Heads': 'Tails';
+
+            
+        
+            if(guess == result)
+            {
+                alert('You Win!');
+            }
+            else
+            {
+                alert('You Lose');
+            }
+        }
+
+    </script>
+
+</html>

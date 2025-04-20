@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Rock Paper Scissors
+        </title>
+
+        <style>
+
+            body
+            {
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: rgb(25, 25, 25);
+                color: white;
+                margin-top: 30px;
+            }
+
+
+            .container
+            {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .game-title
+            {
+                font-size: 30px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+            .button-container
+            {
+                display: flex;
+                gap: 15px;
+                align-items: center;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                margin-bottom: 50px;
+            }
+
+            .rock-button, .paper-button, .scissors-button
+            {
+                background-color: transparent;
+                border: 3px solid white;
+                color: white;
+                width: 120px;
+                height: 120px;
+                padding: 30px 30px;
+                border-radius: 50%;
+                object-fit: cover;
+                cursor: pointer;
+            }
+
+            .button-images
+            {
+                width: 50px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="game-title">Rock Paper Scissors</div>
+            <div class="button-container">
+                <button class="rock-button" onclick="game('Rock');"><img class="button-images" src="images/rock-emoji.png" alt=""></button>
+                <button class="paper-button" onclick="game('Paper');"><img class="button-images" src="images/paper-emoji.png" alt=""></button>
+                <button class="scissors-button" onclick="game('Scissors');"><img class="button-images" src="images/scissors-emoji.png" alt=""></button>
+            </div>
+
+            <div class="content-container">
+                <div class="result-class"></div>
+                <div class="choice-class"></div>
+                <div class="score-class"></div>
+            </div>
+
+            <div><button class="reset-score" onclick="resetScore();">Reset Score</button></div>
+        </div>
+    </body>
+
+
+
+
+    <script>
+        let choices = ['Rock','Paper','Scissors'];
+        let score = JSON.parse(localStorage.getItem('score'));
+
+        if(!score)
+        {
+            score = {
+                Win: 0,
+                Losses: 0,
+                Tie: 0
+            };
+        }
+
+        const content = document.querySelector('.content-container');
+        content.innerHTML = `Wins: ${score.Win}, Losses: ${score.Losses}, Ties: ${score.Tie}`;
+    
+        let result = '';
+        let temp_userchoice = '';
+
+        function game(user_choice)
+        {
+            let bot_choice = choices[Math.floor(Math.random()*(choices.length))];
+
+            if(user_choice == bot_choice)
+            {
+                result = 'Tie!';
+                score.Tie += 1;
+            }
+            else if((user_choice == 'Rock' && bot_choice == 'Paper') || (user_choice == 'Paper' && bot_choice == 'Scissors') || (user_choice == 'Scissors' && bot_choice == 'Rock'))
+            {
+                result = 'You Lose!';
+                score.Losses += 1;
+            }
+            else
+            {
+                result = 'You Win!';
+                score.Win += 1;
+            }
+            
+
+            
+            localStorage.setItem('score',JSON.stringify(score));
+
+            
+        
+            
+        }
+        
+        function resetScore()
+        {
+            score = {
+                Win : 0,
+                Losses: 0,
+                Tie: 0
+            };
+            localStorage.setItem('score', JSON.stringify(score)); // update this line
+            content.innerHTML = `Wins: 0, Losses: 0, Ties: 0`;
+        }
+
+        
+
+    </script>
+
+</html>

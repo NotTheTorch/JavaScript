@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Variables Project</title>
+
+        <style>
+
+            .empty-container
+            {
+                margin-top: 15px;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        <p>Cart Quantity</p>
+        <button onclick="showQuantity();">Show Quantity</button>
+        <button onclick="add_to_cart(1);">Add to Cart</button>
+        <button onclick="add_to_cart(2);">+2</button>
+        <button onclick="add_to_cart(3);">+3</button>
+        <button onclick="add_to_cart(4);">+4</button>
+        <button onclick="add_to_cart(5);">+5</button>
+        <button onclick="reset_cart();">Reset Cart</button>
+        <button onclick="remove_from_cart(1);">-1</button>
+        <button onclick="remove_from_cart(2);">-2</button>
+        <button onclick="remove_from_cart(3);">-3</button>
+        <div class="empty-container"></div>
+    </body>
+
+    <script>
+        let Quantity = 0;
+        let result = '';
+
+        function add_to_cart(items)
+        {
+            
+            if(Quantity + items <= 10)
+            {
+                Quantity += items;
+                result =`Cart Quantity: ${Quantity}`;
+            }
+            else
+            {
+                result = 'The cart is full';
+            }
+
+            document.querySelector('.empty-container').innerHTML = result;
+
+        }
+
+        function reset_cart()
+        {
+            Quantity = 0;
+            result = "Cart was Reset.";
+            document.querySelector('.empty-container').innerHTML = result;
+        }
+
+        function remove_from_cart(items)
+        {
+            if(Quantity - items >= 0)
+            {
+                Quantity -= items;
+                result = `Cart Quantity: ${Quantity}`;
+            }
+            else
+            {
+                result = 'Not enough items in cart';
+            }
+
+            document.querySelector('.empty-container').innerHTML = result;
+        }
+
+        function showQuantity()
+        {
+            document.querySelecto('.empty-container').innerHTML = `Cart Quantity: ${Quantity}`;
+        }
+    
+
+    </script>
+
+</html>
+

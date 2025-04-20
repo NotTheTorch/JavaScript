@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shopping Calculator</title>
+        <style>
+            .content-container
+            {
+                display: flex;
+                gap: 5px;
+                margin-bottom: 15px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content-container">
+                <div><input class="cost" type="text" placeholder="Enter cost"></div>
+                <div><button class="calculate">Calculate</button></div>
+            </div>
+            <div class="empty-container"></div>
+        </div>
+    </body>
+
+    <script>
+        const calculate_button = document.querySelector('.calculate');
+
+        calculate_button.addEventListener('click',()=>{
+
+            const cost = document.querySelector('.cost').value;
+            let value = parseFloat(cost);
+            if(value < 40)
+                value += 10;
+            document.querySelector('.empty-container').innerHTML = `$${value.toFixed(2)}`;
+        
+        });
+
+
+
+    </script>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simple Calculator</title>
+        <style>
+            div
+            {
+                margin-bottom: 15px;;
+            }
+
+            .final-link
+            {
+                margin-top: 50px;
+
+            }
+
+            .empty-container
+            {
+                display: flex;
+                border: 1px solid red;
+                width: 120px;
+                height: 20px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <p>Calculator</p>
+
+        <div>
+
+            <div class="empty-container"></div>
+
+            <div>
+                <button onclick="num += 1; console.log(num);">1</button>
+                <button onclick="num += 2; console.log(num);">2</button>
+                <button onclick="num += 3; console.log(num);">3</button>
+                <button onclick="num += '+'; console.log(num);">+</button>
+            </div>
+            <div>
+                <button onclick="num += 4; console.log(num);">4</button>
+                <button onclick="num += 5; console.log(num);">5</button>
+                <button onclick="num += 6; console.log(num);">6</button>
+                <button onclick="num += '-'; console.log(num);">-</button>
+            </div>
+            <div>
+                <button onclick="num += 7; console.log(num);">7</button>
+                <button onclick="num += 8; console.log(num);">8</button>
+                <button onclick="num += 9; console.log(num);">9</button>
+                <button onclick="num += '*'; console.log(num);">*</button>
+            </div>
+            <div>
+                <button onclick="num += 0; console.log(num);">0</button>
+                <button onclick="num += '.'; console.log(num);">.</button>
+                <button onclick="console.log(eval(num));">=</button>
+                <button onclick="num += '/'; console.log(num);">/</button>
+            </div>
+    
+            <div><button onclick="num='';">Clear</button></div>
+        </div>
+
+
+        <p class="final-link"><a href="nothing">Click here </a>to see the final version of the project.</p>
+        
+    </body>
+
+    <script>
+        let num = "";
+
+        document.querySelector('.empty-container').innerHTML = num;
+
+
+
+    </script>
+
+</html>

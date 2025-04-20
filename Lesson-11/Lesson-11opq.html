@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Array and Loops</title>
+    </head>
+
+    <body>
+        
+    </body>
+
+    <script>
+
+      function searchReturn(array)
+      {
+        for(let i = 0; i < array.length; i++)
+        {
+            if(array[i] == 'search')
+            {
+                return 1;
+            }
+        }
+        return -1;
+      }  
+
+      console.log(searchReturn(['hello','world','search','good']));
+      console.log(searchReturn(['not','found']));
+
+
+      function searchIndex(array)
+      {
+        for(let i = 0; i < array.length; i++)
+        {
+            if(array[i] == 'search')
+                return i;
+        }
+      }
+
+      console.log(searchIndex(['hello','world','search','good','search']));
+
+
+      function findIndex(array,word)
+      {
+        for(let i = 0; i < array.length; i++)
+        {
+            if(array[i] == word)
+                return i;
+        }
+        return -1;
+      }
+
+      console.log(findIndex(['red','blue','green','red'],'red'));
+      console.log(findIndex(['green','red','blue','red'],'yellow'));
+
+    </script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Box Value</title>
+        <style>
+
+            .content-container
+            {
+                display: flex;
+                gap: 5px;
+                margin-bottom: 10px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="content-container">
+                <div><input class="name-input" type="text" placeholder="Your Name"></div>
+                <div><button class="submit-button">Submit</button></div>
+            </div>
+
+            <div class="empty-container"></div>
+        </div>
+    </body>
+
+    <script>
+        
+        const submit = document.querySelector('.submit-button');
+        const input_block = document.querySelector('.name-input');
+
+        submit.addEventListener('click',()=>{
+            const name = input_block.value;
+            document.querySelector('.empty-container').innerHTML = `Your name is: ${name}`;
+        });
+
+        input_block.addEventListener('keydown',(event)=>{
+            if(event.key == 'Enter')
+            {
+                const name = input_block.value
+            document.querySelector('.empty-container').innerHTML = `Your name is: ${name}`;
+            }
+        });
+
+
+    </script>
+
+</html>

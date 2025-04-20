@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Advanced Functions</title>
+    </head>
+
+    <body>
+        <div><button style="cursor: pointer;" class="finish-button" onclick="change();">Finish</button></div>
+    </body>
+
+    <script>
+
+        let isFinished = false;
+
+        function change()
+        {
+            const finish = document.querySelector('.finish-button');
+            if(!isFinished)
+            {
+                finish.innerHTML = 'Loding...';
+                setTimeout(function()
+                {
+                    finish.innerHTML = 'Finished!';
+                }, 1000);
+                isFinished = true;
+            }
+            else
+            {
+                finish.innerHTML = 'Finish';
+                isFinished = false;
+            }
+        }
+
+    </script>
+</html>

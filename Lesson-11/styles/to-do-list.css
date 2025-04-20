@@ -1,0 +1,71 @@
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 15px;
+}
+
+.container
+{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+
+.items-container
+{
+    display: inline-flex;
+    gap: 5px;
+}
+
+.special
+{
+    display: inline-flex;
+    gap: 10px;
+    height: 40px;
+}
+
+.input-taker-final, .date-taker-final, .add-button-final
+{
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.input-taker-final
+{
+    font-size: 14px;
+    padding: 6px;
+    width: 200px;
+}
+
+.date-taker-final
+{
+    width: 150px;
+}
+
+.add-button-final, .delete-button
+{
+    font-size: 15px;
+    color: white;
+    background-color: green;
+    width: 100px;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-button
+{
+    background-color: rgb(176, 0, 0);
+    height: 40px;
+}
+
+
+.content
+{
+    display: flex;
+    gap: 10px;
+    height: 40px;
+    align-items: center;
+    margin-bottom: 7px;
+}
