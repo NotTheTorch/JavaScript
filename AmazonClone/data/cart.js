@@ -1,7 +1,1 @@
-const cart = [
-    {
-
-
-    }
-
-]
+const cart = []
