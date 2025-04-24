@@ -1,4 +1,4 @@
-import {cart,updateQuantity,updateCartQuantity_checkout,removeFromCart} from '../data/cart.js'
+import {cart,updateQuantity,updateCartQuantity_checkout,removeFromCart,updateDeliveryOption} from '../data/cart.js'
 import { products } from '../data/products.js';
 import { formatCurrency } from './utils/money.js';
 import dayjs from 'https://cdn.jsdelivr.net/npm/dayjs@2.0.0-alpha.2/dist/index.mjs';
@@ -96,7 +96,7 @@ function deliveryOptionsHTML(matchingProduct,cartItem)
 
         html += 
         `
-        <div class="delivery-option">
+        <div class="delivery-option js-delivery-option" data-product-id="${matchingProduct.id}" data-delivery-option-id="${deliveryOption.id}">
                   <input type="radio"
                     ${isChecked? 'checked': ''}
                     class="delivery-option-input"
@@ -154,3 +154,12 @@ document.querySelectorAll('.js-save-link')
       quantityLabel.innerHTML = quantity;
     });
   });
+
+
+document.querySelectorAll('.js-delivery-option')
+.forEach((element)=>{
+    element.addEventListener('click',()=>{
+        const {productId,deliveryOptionId} = element.dataset;
+        updateDeliveryOption(productId,deliveryOptionId);
+    });
+});
