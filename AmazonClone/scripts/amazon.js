@@ -1,6 +1,5 @@
 import {addToCart, updateCartQuantity_checkout} from "../data/cart.js";
-import { products } from "../data/products.js";
-import { formatCurrency } from "./utils/money.js";
+import { products } from "../data/products.js"; 
 
 let productsHTML = '';
 
@@ -28,6 +27,7 @@ products.forEach((product)=>{
             ${product.getPrice()}
           </div>
 
+
           <div class="product-quantity-container">
             <select class="js-quantity-selector-${product.id}">
               <option selected value="1">1</option>
@@ -42,6 +42,8 @@ products.forEach((product)=>{
               <option value="10">10</option>
             </select>
           </div>
+
+          ${product.extraInfoHTML()}
 
           <div class="product-spacer"></div>
 
